@@ -1,20 +1,33 @@
 import de.vandermeer.asciitable.AsciiTable;
 
+import java.util.Scanner;
+
 public class Main
 {
     public static void main(String[] args)
     {
-       /* AsciiTable tabel=new AsciiTable();
-        tabel.addRule();
-        tabel.addRow("coloana 1 rand 1","coloana 2 rand 1");
-        tabel.addRule();
-        tabel.addRow("coloana 1 rand 2","coloana 2 rand 2");
-        tabel.addRule();
-        String citire=tabel.render();
-        System.out.println(citire);
-        */
        Procesor proc=new Procesor("Intel","i5-8300H",3500);
        Lenovo legion=new Lenovo("Legion","Asus","DDR4",proc);
-       legion.laptopBoot();
+       legion.powerUp();
+       Scanner citire=new Scanner(System.in);
+       String combinatie=citire.nextLine();
+       if(combinatie.equals("fn f10"))
+       {
+           legion.biosMenu();
+       }
+       else
+           {
+               legion.windows();
+           }
+       AsciiTable tabel=new AsciiTable();
+        tabel.addRule();
+        tabel.addRow(legion.getModel(),legion.getMotherboard());
+        tabel.addRule();
+        tabel.addRow(legion.getProcesor().getSeria(),legion.getRam());
+        tabel.addRule();
+        String afisare=tabel.render();
+        System.out.println(afisare);
+
+
     }
 }

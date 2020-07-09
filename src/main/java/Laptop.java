@@ -28,7 +28,9 @@ public abstract class Laptop
       this.procesor=procesor;
   }
 
-  public abstract void laptopBoot();
+  public abstract void powerUp();
+  public abstract void biosMenu();
+  public abstract void windows();
 
 
 

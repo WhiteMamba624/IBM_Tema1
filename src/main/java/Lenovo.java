@@ -7,9 +7,24 @@ public class Lenovo extends Laptop
         this.model=model;
     }
 
-    @Override
-    public void laptopBoot()
+    public String getModel()
     {
-        System.out.println("Legion BIOS Booting");
+        return model;
+    }
+
+    @Override
+    public void powerUp()
+    {
+        System.out.println("Legion logo");
+    }
+
+    public void biosMenu()
+    {
+        System.out.println("Lenovo legion bios menu");
+    }
+
+    public void windows()
+    {
+        System.out.println("Windows 10 is starting");
     }
 }
